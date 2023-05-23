@@ -4,6 +4,10 @@ dist: artifacts
 before:
    hooks:
      - go mod download
+
+archives:
+  - name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
+
 builds:
   - env:
     - CGO_ENABLED=0
